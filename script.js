@@ -1,97 +1,91 @@
-// Add these new functions to your existing script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the website
+    initWebsite();
+});
 
-function initVideoGallery() {
-    const videoGrid = document.querySelector('.video-grid');
-    const loadMoreBtn = document.getElementById('loadMoreBtn');
-    const thumbnailItems = document.querySelectorAll('.video-thumbnail-item');
-    const videoModal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
-    const closeModal = document.querySelector('.close-modal');
+function initWebsite() {
+    // Create particles for hero section
+    createParticles();
+    
+    // Load YouTube videos
+    loadVideos();
+    
+    // Initialize animations
+    initAnimations();
+    
+    // Initialize event listeners
+    initEventListeners();
+    
+    // Start counter animations
+    startCounters();
+}
 
-    // Video data for additional content
-    const videoData = [
+function createParticles() {
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 50;
+    
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--red);
+            border-radius: 50%;
+            animation: floatParticle ${Math.random() * 10 + 10}s linear infinite;
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            opacity: ${Math.random() * 0.5 + 0.1};
+        `;
+        
+        // Add custom animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatParticle {
+                0% {
+                    transform: translate(0, 0) rotate(0deg);
+                    opacity: ${Math.random() * 0.5 + 0.1};
+                }
+                100% {
+                    transform: translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        particlesContainer.appendChild(particle);
+    }
+}
+
+function loadVideos() {
+    const videoGrid = document.getElementById('videoGrid');
+    const videos = [
         {
-            id: 1,
-            title: "10 Windows Shortcuts You Need to Know",
-            description: "Boost your productivity with these essential Windows keyboard shortcuts that will save you time every day.",
-            thumbnail: "Windows Tips",
-            duration: "8:15"
+            title: "Amazing Tech Trick You Need to Know",
+            description: "Discover this incredible technology hack that will save you hours of work.",
+            embedCode: '<iframe width="560" height="315" src="https://www.youtube.com/embed/4bhLudiJKaY?si=y2WuGnvTw-2rbBAU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
         },
         {
-            id: 2,
-            title: "Smartphone Battery Saving Tips",
-            description: "Extend your phone's battery life with these simple settings adjustments and usage habits.",
-            thumbnail: "Battery Life",
-            duration: "12:30"
+            title: "Secret Windows Shortcuts Revealed",
+            description: "Learn hidden Windows shortcuts that professionals use every day.",
+            embedCode: '<iframe width="560" height="315" src="https://www.youtube.com/embed/hL-w2bjtVOo?si=406MaFJyZn8ITDT_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
         },
         {
-            id: 3,
-            title: "Secure Your Online Accounts",
-            description: "Learn how to protect your digital identity with strong security practices and tools.",
-            thumbnail: "Security",
-            duration: "15:45"
-        },
-        {
-            id: 4,
-            title: "Hidden Google Search Features",
-            description: "Discover powerful Google search tricks that most people don't know about.",
-            thumbnail: "Google Tricks",
-            duration: "10:20"
+            title: "Ultimate Smartphone Optimization Guide",
+            description: "Maximize your smartphone's performance with these simple tweaks.",
+            embedCode: '<iframe width="560" height="315" src="https://www.youtube.com/embed/LEicyF8qDm4?si=8Rzn3Xc4-fb34RgU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
         }
     ];
 
-    let displayedVideos = 2;
-    let animationDelay = 0;
-
-    // Initialize thumbnail click events
-    thumbnailItems.forEach(thumbnail => {
-        thumbnail.addEventListener('click', function() {
-            const videoId = this.getAttribute('data-video');
-            openVideoModal(videoId);
-        });
-    });
-
-    // Modal functionality
-    function openVideoModal(videoId) {
-        const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-        modalVideo.src = videoUrl;
-        videoModal.classList.add('show');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeVideoModal() {
-        videoModal.classList.remove('show');
-        modalVideo.src = '';
-        document.body.style.overflow = 'auto';
-    }
-
-    // Close modal events
-    closeModal.addEventListener('click', closeVideoModal);
-    
-    videoModal.addEventListener('click', function(e) {
-        if (e.target === videoModal) {
-            closeVideoModal();
-        }
-    });
-
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && videoModal.classList.contains('show')) {
-            closeVideoModal();
-        }
-    });
-
-    // Function to create additional video cards
-    function createVideoCard(video, index) {
-        const card = document.createElement('div');
-        card.className = 'video-card';
-        card.style.animationDelay = `${animationDelay}s`;
-        animationDelay += 0.1;
+    videos.forEach((video, index) => {
+        const videoCard = document.createElement('div');
+        videoCard.className = 'video-card';
+        videoCard.style.animationDelay = `${index * 0.2}s`;
         
-        card.innerHTML = `
-            <div class="video-thumbnail">
-                ${video.thumbnail}
-                <div class="video-duration">${video.duration}</div>
+        videoCard.innerHTML = `
+            <div class="video-iframe">
+                ${video.embedCode}
             </div>
             <div class="video-info">
                 <h3>${video.title}</h3>
@@ -99,77 +93,167 @@ function initVideoGallery() {
             </div>
         `;
         
-        card.addEventListener('click', function() {
-            // For demo purposes, show an alert
-            // In production, you might want to link to YouTube or use modal
-            alert(`Playing: ${video.title}\n\nThis would play the video in a real implementation.`);
-        });
-        
-        return card;
-    }
-
-    // Function to display additional videos
-    function displayVideos() {
-        // Clear existing videos
-        videoGrid.innerHTML = '';
-        animationDelay = 0;
-        
-        // Display videos up to the current limit
-        for (let i = 0; i < Math.min(displayedVideos, videoData.length); i++) {
-            const videoCard = createVideoCard(videoData[i], i);
-            videoGrid.appendChild(videoCard);
-        }
-        
-        // Hide load more button if all videos are displayed
-        if (displayedVideos >= videoData.length) {
-            if (loadMoreBtn) {
-                loadMoreBtn.style.display = 'none';
-            }
-        } else {
-            if (loadMoreBtn) {
-                loadMoreBtn.style.display = 'inline-block';
-            }
-        }
-    }
-
-    // Load more videos function
-    function loadMoreVideos() {
-        displayedVideos += 2;
-        displayVideos();
-        
-        // Smooth scroll to new videos
-        setTimeout(() => {
-            videoGrid.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 300);
-    }
-
-    // Initialize the video gallery
-    if (videoGrid) {
-        displayVideos();
-    }
-
-    if (loadMoreBtn) {
-        loadMoreBtn.addEventListener('click', loadMoreVideos);
-    }
+        videoGrid.appendChild(videoCard);
+    });
 }
 
-// Update the initWebsite function to include the new video gallery
-function initWebsite() {
-    // Handle logo animation
-    handleLogoAnimation();
-    
-    // Initialize video gallery (now with YouTube integration)
-    initVideoGallery();
-    
-    // Initialize contact form
-    initContactForm();
-    
-    // Initialize smooth scrolling
-    initSmoothScrolling();
-    
+function initAnimations() {
+    // Remove logo animation after it completes
+    setTimeout(() => {
+        const logoAnimation = document.querySelector('.logo-animation');
+        logoAnimation.classList.add('fade-out');
+        
+        setTimeout(() => {
+            logoAnimation.style.display = 'none';
+        }, 800);
+    }, 2500);
+
     // Initialize scroll animations
     initScrollAnimations();
 }
 
-// Rest of your existing functions (handleLogoAnimation, initContactForm, etc.) remain the same
-// ... [Keep all your existing functions from the previous implementation]
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all animatable elements
+    document.querySelectorAll('.about-feature, .video-card, .section-header').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+function initEventListeners() {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Contact form submission
+    const contactForm = document.getElementById('messageForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Simulate form submission
+            showNotification(`Thank you, ${name}! Your message has been sent.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+    }
+
+    // Navbar background on scroll
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(10, 10, 10, 0.95)';
+            header.style.backdropFilter = 'blur(10px)';
+        } else {
+            header.style.background = 'rgba(10, 10, 10, 0.95)';
+            header.style.backdropFilter = 'blur(10px)';
+        }
+    });
+}
+
+function startCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+        
+        const updateCounter = () => {
+            current += step;
+            if (current < target) {
+                counter.textContent = Math.floor(current).toLocaleString();
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target.toLocaleString();
+            }
+        };
+        
+        // Start counter when element is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateCounter();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        observer.observe(counter);
+    });
+}
+
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--red);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        z-index: 10000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    `;
+    notification.textContent = message;
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Animate out and remove
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 300);
+    }, 3000);
+}
+
+// Add CSS for particle animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes floatParticle {
+        0% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+        100% {
+            transform: translate(var(--tx, 100px), var(--ty, 100px)) rotate(360deg);
+        }
+    }
+`;
+document.head.appendChild(style);

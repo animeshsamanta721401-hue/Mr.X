@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,250 +5,262 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mr.X - Technology Tips and Tricks</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Logo Animation -->
     <div class="logo-animation">
-        <div class="animation-container">
-            <div class="tech-grid"></div>
-            <div class="glow-effect"></div>
-            <div class="animated-logo">
-                <div class="logo-text">
-                    <span class="mr-text">Mr.</span>
-                    <span class="x-text">X</span>
-                </div>
-                <div class="logo-subtitle">Technology Tips & Tricks</div>
-            </div>
-            <div class="loading-bar">
-                <div class="loading-progress"></div>
-            </div>
+        <div class="animated-logo">
+            <div class="pulse-circle"></div>
+            <h1><span class="mr">Mr.</span><span class="x">X</span></h1>
+            <p>Technology Tips & Tricks</p>
         </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <!-- Header Section -->
-        <header>
-            <div class="container">
-                <div class="logo">
-                    <h1><span class="mr">Mr.</span><span class="x">X</span></h1>
-                    <span>Technology Tips & Tricks</span>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="#home" class="nav-link">Home</a></li>
-                        <li><a href="#videos" class="nav-link">Videos</a></li>
-                        <li><a href="#about" class="nav-link">About</a></li>
-                        <li><a href="#contact" class="nav-link">Contact</a></li>
-                    </ul>
-                </nav>
-                <div class="mobile-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><span class="mr">Mr.</span><span class="x">X</span></h1>
+                <span>Technology Tips & Tricks</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#videos">Videos</a></li>
+                    <li><a href="#latest-videos">Latest Videos</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Master Technology with <span class="mr">Mr.</span><span class="x">X</span></h2>
+                <p>Your ultimate destination for technology tips, tricks, and tutorials that make tech simple and accessible.</p>
+                <div class="cta-buttons">
+                    <a href="#latest-videos" class="btn btn-primary">Watch Latest Videos</a>
+                    <a href="#videos" class="btn btn-secondary">Explore All Content</a>
                 </div>
             </div>
-        </header>
+        </div>
+    </section>
 
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-particles" id="particles"></div>
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-badge">New Episode Live</div>
-                    <h2 class="hero-title">
-                        <span class="title-line">Master Technology</span>
-                        <span class="title-line">With <span class="mr">Mr.</span><span class="x">X</span></span>
-                    </h2>
-                    <p class="hero-description">Your ultimate destination for cutting-edge technology tips, tricks, and tutorials that transform complex tech into simple solutions.</p>
-                    <div class="cta-buttons">
-                        <a href="https://youtube.com/@mrxcoming?si=YKiC8-jYZuAnruft" target="_blank" class="btn btn-primary">
-                            <span>Watch Videos</span>
-                            <div class="btn-glow"></div>
+    <!-- Latest Videos Section -->
+    <section id="latest-videos" class="latest-videos">
+        <div class="container">
+            <h2>Latest Videos <span class="badge">NEW</span></h2>
+            <p class="section-subtitle">Check out our most recent tech tutorials and tips</p>
+            <div class="video-grid featured">
+                <!-- Latest Video 1 -->
+                <div class="video-card featured-card">
+                    <div class="video-thumbnail">
+                        <div class="video-container">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4bhLudiJKaY" 
+                                    title="YouTube video player" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-badge">Latest</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Windows 11 Secret Features</h3>
+                        <p>Discover hidden features in Windows 11 that will revolutionize your workflow.</p>
+                        <div class="video-meta">
+                            <span class="views">25K views</span>
+                            <span class="date">2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Latest Video 2 -->
+                <div class="video-card featured-card">
+                    <div class="video-thumbnail">
+                        <div class="video-container">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/hL-w2bjtVOo" 
+                                    title="YouTube video player" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-badge">New</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Android Performance Boost</h3>
+                        <p>Speed up your Android device with these simple yet powerful optimization techniques.</p>
+                        <div class="video-meta">
+                            <span class="views">18K views</span>
+                            <span class="date">1 week ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Latest Video 3 -->
+                <div class="video-card featured-card">
+                    <div class="video-thumbnail">
+                        <div class="video-container">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/LEicyF8qDm4" 
+                                    title="YouTube video player" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-badge">Trending</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>iPhone Security Masterclass</h3>
+                        <p>Protect your iPhone from threats with these essential security settings and practices.</p>
+                        <div class="video-meta">
+                            <span class="views">32K views</span>
+                            <span class="date">3 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="videos">
+        <div class="container">
+            <h2>All Videos</h2>
+            <div class="video-grid">
+                <!-- Video cards will be populated by JavaScript -->
+            </div>
+            <div class="load-more">
+                <button id="loadMoreBtn" class="btn btn-secondary">Load More Videos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About <span class="mr">Mr.</span><span class="x">X</span></h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to the official website of <span class="mr">Mr.</span><span class="x">X</span>, your trusted source for technology tips and tricks. Our mission is to demystify technology and make it accessible to everyone, regardless of their technical background.</p>
+                    <p>From software shortcuts to hardware hacks, we cover a wide range of topics that help you get the most out of your devices and digital experiences.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">50K+</span>
+                            <span class="stat-label">Subscribers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Videos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1M+</span>
+                            <span class="stat-label">Views</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://youtube.com/@mrxcoming?si=YKiC8-jYZuAnruft" target="_blank" class="social-link youtube">
+                            <span class="icon">▶️</span>
+                            YouTube
                         </a>
-                        <a href="#videos" class="btn btn-secondary">
-                            <span>Explore Content</span>
+                        <a href="https://www.facebook.com/share/1AQGzN1YSx/" target="_blank" class="social-link facebook">
+                            <span class="icon">📘</span>
+                            Facebook
                         </a>
                     </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <div class="stat-number" data-count="50">0</div>
-                            <div class="stat-label">Videos</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number" data-count="10000">0</div>
-                            <div class="stat-label">Subscribers</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number" data-count="500000">0</div>
-                            <div class="stat-label">Views</div>
-                        </div>
+                </div>
+                <div class="about-image">
+                    <div class="placeholder-logo">
+                        <span class="mr">Mr.</span><span class="x">X</span>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="floating-element element-1">🚀</div>
+                        <div class="floating-element element-2">💡</div>
+                        <div class="floating-element element-3">⚡</div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Videos Section -->
-        <section id="videos" class="videos">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Latest Videos</h2>
-                    <p>Discover the newest tech tips and tricks from Mr.X</p>
-                </div>
-                <div class="video-grid" id="videoGrid">
-                    <!-- Videos will be loaded by JavaScript -->
-                </div>
+    <!-- Disclaimer Section -->
+    <section class="disclaimer">
+        <div class="container">
+            <h2>Disclaimer</h2>
+            <div class="disclaimer-content">
+                <p>This channel is made only for educational purposes.</p>
+                <p>We don't promote any illegal or harmful activity.</p>
+                <p>Everything shown here is for learning and awareness only.</p>
+                <p>Please use the information responsibly.</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="container">
-                <div class="section-header">
-                    <h2>About <span class="mr">Mr.</span><span class="x">X</span></h2>
-                    <p>Your guide to mastering technology</p>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Connect With Us</h3>
+                    <p>Have questions, suggestions, or collaboration ideas? Reach out to us through our social media channels.</p>
+                    <div class="contact-links">
+                        <a href="https://youtube.com/@mrxcoming?si=YKiC8-jYZuAnruft" target="_blank" class="contact-link">
+                            <span class="icon">▶️</span>
+                            <span>YouTube Channel</span>
+                        </a>
+                        <a href="https://www.facebook.com/share/1AQGzN1YSx/" target="_blank" class="contact-link">
+                            <span class="icon">📘</span>
+                            <span>Facebook Page</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <div class="about-feature">
-                            <div class="feature-icon">🚀</div>
-                            <div class="feature-content">
-                                <h3>Cutting-Edge Tech Tips</h3>
-                                <p>Stay ahead with the latest technology insights and productivity hacks.</p>
-                            </div>
+                <div class="contact-form">
+                    <h3>Send Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
                         </div>
-                        <div class="about-feature">
-                            <div class="feature-icon">💡</div>
-                            <div class="feature-content">
-                                <h3>Simple Explanations</h3>
-                                <p>Complex tech concepts broken down into easy-to-understand tutorials.</p>
-                            </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
                         </div>
-                        <div class="about-feature">
-                            <div class="feature-icon">⚡</div>
-                            <div class="feature-content">
-                                <h3>Time-Saving Tricks</h3>
-                                <p>Learn shortcuts and techniques that save you hours of work.</p>
-                            </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
                         </div>
-                        <div class="social-links">
-                            <a href="https://youtube.com/@mrxcoming?si=YKiC8-jYZuAnruft" target="_blank" class="social-link youtube">
-                                <span>YouTube</span>
-                            </a>
-                            <a href="https://www.facebook.com/share/1AQGzN1YSx/" target="_blank" class="social-link facebook">
-                                <span>Facebook</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="about-visual">
-                        <div class="floating-card card-1">
-                            <div class="card-icon">💻</div>
-                            <div class="card-text">Tech Tips</div>
-                        </div>
-                        <div class="floating-card card-2">
-                            <div class="card-icon">🎬</div>
-                            <div class="card-text">Tutorials</div>
-                        </div>
-                        <div class="floating-card card-3">
-                            <div class="card-icon">🔧</div>
-                            <div class="card-text">How-To Guides</div>
-                        </div>
-                        <div class="main-visual">
-                            <div class="visual-glow"></div>
-                            <div class="visual-content">
-                                <span class="mr">Mr.</span><span class="x">X</span>
-                            </div>
-                        </div>
-                    </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Disclaimer Section -->
-        <section class="disclaimer">
-            <div class="container">
-                <div class="disclaimer-content">
-                    <div class="disclaimer-icon">⚠️</div>
-                    <h3>Disclaimer</h3>
-                    <p>This channel is made only for educational purposes. We don't promote any illegal or harmful activity.</p>
-                    <p>Everything shown here is for learning and awareness only. Please use the information responsibly.</p>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3><span class="mr">Mr.</span><span class="x">X</span></h3>
+                    <p>Technology Tips & Tricks</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#videos">Videos</a>
+                    <a href="#latest-videos">Latest Videos</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://youtube.com/@mrxcoming?si=YKiC8-jYZuAnruft" target="_blank">YouTube</a>
+                    <a href="https://www.facebook.com/share/1AQGzN1YSx/" target="_blank">Facebook</a>
                 </div>
             </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Get In Touch</h2>
-                    <p>Have questions or suggestions? We'd love to hear from you</p>
-                </div>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-method">
-                            <div class="method-icon">📧</div>
-                            <div class="method-info">
-                                <h4>YouTube Channel</h4>
-                                <a href="https://youtube.com/@mrxcoming?si=YKiC8-jYZuAnruft" target="_blank">@mrxcoming</a>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="method-icon">📱</div>
-                            <div class="method-info">
-                                <h4>Facebook</h4>
-                                <a href="https://www.facebook.com/share/1AQGzN1YSx/" target="_blank">Mr.X Page</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-form">
-                        <form id="messageForm">
-                            <div class="form-group">
-                                <input type="text" id="name" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" id="email" placeholder="Your Email" required>
-                            </div>
-                            <div class="form-group">
-                                <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">
-                                <span>Send Message</span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Mr.X - Technology Tips & Tricks. All rights reserved.</p>
             </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3><span class="mr">Mr.</span><span class="x">X</span></h3>
-                        <p>Technology Tips & Tricks</p>
-                        <div class="footer-social">
-                            <a href="https://youtube.com/@mrxcoming?si=YKiC8-jYZuAnruft" target="_blank">YouTube</a>
-                            <a href="https://www.facebook.com/share/1AQGzN1YSx/" target="_blank">Facebook</a>
-                        </div>
-                    </div>
-                    <div class="footer-links">
-                        <a href="#home">Home</a>
-                        <a href="#videos">Videos</a>
-                        <a href="#about">About</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2024 <span class="mr">Mr.</span><span class="x">X</span>. All rights reserved. | For Educational Purposes Only</p>
-                </div>
-            </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
-</html>
+                                </html>

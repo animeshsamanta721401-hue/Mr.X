@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #FFF; /* White */
+    --secondary-color: #000; /* Black */
+    --accent-color: #FF0000; /* Red */
+    --text-color: #333;
+    --light-gray: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background: var(--light-gray);
+    color: var(--text-color);
+    overflow-x: hidden; /* Prevent horizontal scroll from animation */
+}
+
+/* Animation Container */
+.animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+}
+
+.animation-container.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.logo-animation {
+    font-size: 6em;
+    font-weight: 700;
+    color: var(--primary-color);
+    transform: scale(0);
+    animation: scaleIn 1s forwards cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.logo-animation .red-x {
+    color: var(--accent-color);
+}
+
+@keyframes scaleIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Header */
+.main-header {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.main-header .logo {
+    font-size: 2em;
+    font-weight: 700;
+    padding-left: 2rem;
+}
+
+.main-header .logo .red-x {
+    color: var(--accent-color);
+}
+
+.main-header nav ul {
+    list-style: none;
+    display: flex;
+    padding-right: 2rem;
+}
+
+.main-header nav ul li {
+    margin-left: 20px;
+}
+
+.main-header nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.main-header nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://via.placeholder.com/1500x500/000000/FFFFFF?text=Mr.X+Tech+Background') no-repeat center center/cover; /* Placeholder for a tech background image */
+    color: var(--primary-color);
+    text-align: center;
+    padding: 6rem 1rem;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 2rem;
+    max-width: 800px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background: #cc0000; /* Darker red */
+    transform: translateY(-3px);
+}
+
+/* Latest Videos Section */
+.latest-videos {
+    padding: 4rem 1rem;
+    text-align: center;
+    background: var(--primary-color);
+}
+
+.latest-videos h2 {
+    font-size: 2.5em;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-item {
+    background: var(--light-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 250px; /* Adjust as needed */
+    border: none;
+}
+
+/* Disclaimer Section */
+.disclaimer {
+    padding: 4rem 1rem;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.disclaimer h2 {
+    font-size: 2.5em;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+}
+
+.disclaimer p {
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+.social-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .main-header nav ul {
+        padding-right: 0;
+        margin-top: 1rem;
+    }
+
+    .main-header nav ul li {
+        margin: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .latest-videos h2,
+    .disclaimer h2 {
+        font-size: 2em;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logo-animation {
+        font-size: 4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header .logo {
+        padding-left: 1rem;
+        font-size: 1.8em;
+    }
+
+    .main-header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-header nav ul li {
+        margin: 5px 8px;
+    }
+
+    .hero {
+        padding: 4rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .video-item iframe {
+        height: 200px;
+    }
+
+    .disclaimer p {
+        font-size: 0.9em;
+    }
+
+    .logo-animation {
+        font-size: 3em;
+    }
+}
